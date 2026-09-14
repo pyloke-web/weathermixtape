@@ -35,7 +35,41 @@ const BOOKS = [
   { id: 1661, title: "The Adventures of Sherlock Holmes", author: "Arthur Conan Doyle" },
   { id: 161, title: "Sense and Sensibility", author: "Jane Austen" },
   { id: 113, title: "The Secret Garden", author: "Frances Hodgson Burnett" },
-  { id: 158, title: "Emma", author: "Jane Austen" }
+  { id: 158, title: "Emma", author: "Jane Austen" },
+  { id: 105, title: "Persuasion", author: "Jane Austen" },
+  { id: 1400, title: "Great Expectations", author: "Charles Dickens" },
+  { id: 730, title: "Oliver Twist", author: "Charles Dickens" },
+  { id: 98, title: "A Tale of Two Cities", author: "Charles Dickens" },
+  { id: 174, title: "The Picture of Dorian Gray", author: "Oscar Wilde" },
+  { id: 76, title: "Adventures of Huckleberry Finn", author: "Mark Twain" },
+  { id: 74, title: "The Adventures of Tom Sawyer", author: "Mark Twain" },
+  { id: 526, title: "Heart of Darkness", author: "Joseph Conrad" },
+  { id: 120, title: "Treasure Island", author: "Robert Louis Stevenson" },
+  { id: 43, title: "The Strange Case of Dr Jekyll and Mr Hyde", author: "Robert Louis Stevenson" },
+  { id: 36, title: "The War of the Worlds", author: "H. G. Wells" },
+  { id: 35, title: "The Time Machine", author: "H. G. Wells" },
+  { id: 16, title: "Peter Pan", author: "J. M. Barrie" },
+  { id: 55, title: "The Wonderful Wizard of Oz", author: "L. Frank Baum" },
+  { id: 521, title: "Robinson Crusoe", author: "Daniel Defoe" },
+  { id: 829, title: "Gulliver's Travels", author: "Jonathan Swift" },
+  { id: 2852, title: "The Hound of the Baskervilles", author: "Arthur Conan Doyle" },
+  { id: 145, title: "Middlemarch", author: "George Eliot" },
+  { id: 599, title: "Vanity Fair", author: "William Makepeace Thackeray" },
+  { id: 110, title: "Tess of the d'Urbervilles", author: "Thomas Hardy" },
+  { id: 996, title: "Don Quixote", author: "Miguel de Cervantes" },
+  { id: 2600, title: "War and Peace", author: "Leo Tolstoy" },
+  { id: 2554, title: "Crime and Punishment", author: "Fyodor Dostoevsky" },
+  { id: 1184, title: "The Count of Monte Cristo", author: "Alexandre Dumas" },
+  { id: 1257, title: "The Three Musketeers", author: "Alexandre Dumas" },
+  { id: 135, title: "Les Misérables", author: "Victor Hugo" },
+  { id: 164, title: "Twenty Thousand Leagues Under the Sea", author: "Jules Verne" },
+  { id: 103, title: "Around the World in Eighty Days", author: "Jules Verne" },
+  { id: 215, title: "The Call of the Wild", author: "Jack London" },
+  { id: 910, title: "White Fang", author: "Jack London" },
+  { id: 236, title: "The Jungle Book", author: "Rudyard Kipling" },
+  { id: 209, title: "The Turn of the Screw", author: "Henry James" },
+  { id: 203, title: "Uncle Tom's Cabin", author: "Harriet Beecher Stowe" },
+  { id: 289, title: "The Wind in the Willows", author: "Kenneth Grahame" }
 ];
 
 function stripBoilerplate(text) {
@@ -60,7 +94,7 @@ export default async function handler(req, res) {
   const keywords = KEYWORDS[mood] || KEYWORDS.clear;
 
   // Try up to 6 random books until we find a matching sentence.
-  const shuffled = [...BOOKS].sort(() => Math.random() - 0.5).slice(0, 6);
+  const shuffled = [...BOOKS].sort(() => Math.random() - 0.5).slice(0, 10);
 
   for (const book of shuffled) {
     try {
